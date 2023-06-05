@@ -19,7 +19,7 @@ import kotlin.collections.mutableListOf
 const val BASE_URL = "https://api.currentsapi.services"
 class MainActivity : AppCompatActivity() {
 
-    lateinit var countDownTimer: CountDownTimer
+
 
     private lateinit var rv_recyclerView:RecyclerView
 
