@@ -7,16 +7,18 @@ import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.anu.retrofitnews.adapter.RecyclerAdapter
+import com.anu.retrofitnews.retrofitClasses.RetrofitInstance
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import java.lang.Exception
 import kotlin.collections.mutableListOf
 
-const val BASE_URL = "https://api.currentsapi.services"
+//const val BASE_URL = "https://api.currentsapi.services"
 class MainActivity : AppCompatActivity() {
 
 
@@ -50,11 +52,12 @@ class MainActivity : AppCompatActivity() {
 
 
     private fun makeAPIRequest(){
-        val api= Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
-            .create(APIRequest::class.java)
+//        val api= Retrofit.Builder()
+//            .baseUrl(BASE_URL)
+//            .addConverterFactory(GsonConverterFactory.create())
+//            .build()
+//            .create(APIRequest::class.java)
+        val api = RetrofitInstance.getRetrofitInstance().create(APIRequest::class.java)
 
         GlobalScope.launch(Dispatchers.IO) {
             try {
