@@ -4,7 +4,7 @@ import com.anu.retrofitnews.api.NewsApiJson
 import retrofit2.http.GET
 
 interface APIRequest {
-    @GET("v1/latest-news?language=en&apiKey=7goxs3CKQUAJRGhquf6BovIkIToi_vj5Uii2lTrQCVE9EtY2")
+    @GET("v1/latest-news?language=en&apiKey=-i__IXNm-XzGV_J68cqwRMSYzuIYiUT02wKKSilk4VSI_fDV")
     suspend fun getNews() : NewsApiJson
 
 }
